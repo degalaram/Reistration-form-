@@ -28,6 +28,7 @@
                 <tr>
                     <td style="color:red;">Last Name</td>
                     <td><input type="text" name="lastname" id="lastname"></td>
+                    <p id="namelast"></p>
                 </tr>
                 <tr>
                     <td class="age">Age</td>
@@ -62,13 +63,14 @@
             var lastname = document.getElementById('lastname').value;
             var age = document.getElementById('age').value;
             var errorMessage = '';
+            var namelast = document.getElementById('namelast').value
         
             if (firstname === '') {
                 errorMessage += 'check the name length (1-20).<br>';
             }
         
             if (lastname === '') {
-                errorMessage += 'Please enter your last name.<br>';
+                namelast += 'Please enter your last name.<br>';
             }
 
             if (age === '') {
