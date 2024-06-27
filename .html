@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title align="center">Register Form</title>
+    <link rel="stylesheet" href=".css">
+    <script src="scipt.js"></script>
+
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table cellpadding="15" align="center">
+            <tr>
+                <td colspan="2" align="center">
+                    <h1 style="color:blue;">REGISTER FORM</h1>
+                </td>
+            </tr>
+            <form onsubmit="return validateForm()">
+                <tr>
+                    <td style="color:navy; font-size: 23px;">First Name</td>
+                    <td><input type="text" name="firstname" id="firstname"></td>
+                </tr>
+                <tr>
+                    <td style="color:red;">Last Name</td>
+                    <td><input type="text" name="lastname" id="lastname"></td>
+                </tr>
+                <tr>
+                    <td class="age">Age</td>
+                    <td><input type="number" name="age" id="age"></td>
+                </tr>
+                <tr>
+                    <td style="color:green;">Gender</td>
+                    <td class="gender">
+                        <input type="radio" name="gender" value="male"> M
+                        <input type="radio" name="gender" value="female"> F
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:#9900ffb6;">Course</td>
+                    <td class="course">
+                        <input type="checkbox" name="course1" value="course1">Python
+                        <input type="checkbox" name="course2" value="course2">Java
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" style="color:red; background-color: lightgreen; border-radius: 5px; width: 8vw; height:6vh; font-size: 20px;" value="Submit">
+                    </td>
+                </tr>
+            </form>
+        </table>
+        <div id="error-message" class="error"></div>
+    </div>
+    <script>
+        function validateForm() {
+            var firstname = document.getElementById('firstname').value;
+            var lastname = document.getElementById('lastname').value;
+            var age = document.getElementById('age').value;
+            var errorMessage = '';
+        
+            if (firstname === '') {
+                errorMessage += 'check the name length (1-20).<br>';
+            }
+        
+            if (lastname === '') {
+                errorMessage += 'Please enter your last name.<br>';
+            }
+
+            if (age === '') {
+                errorMessage += 'Check the age range (20-40).<br>';
+
+            }
+            if (errorMessage !== '') {
+                document.getElementById('error-message').innerHTML = errorMessage;
+                return false;
+            }
+
+            if (Course === '') {
+                errorMessage += 'Select the course.<br>';
+            }
+        
+            return true;
+        }
+            </script>
+</body>
+</html>
